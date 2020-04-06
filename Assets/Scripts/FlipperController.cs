@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class FlipperController : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((!isRight && Input.GetAxis("LeftFire") > 0) || (!isRight && Input.GetAxis("RightFire") > 0))
+        if((!isRight && Input.GetAxis("LeftFire") > 0) || (isRight && Input.GetAxis("RightFire") > 0))
             keyActive = true;
         else
             keyActive = false;
