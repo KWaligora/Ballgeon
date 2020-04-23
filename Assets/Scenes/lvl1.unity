@@ -1382,7 +1382,7 @@ PrefabInstance:
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
-      value: 1000
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766494, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
@@ -1776,7 +1776,7 @@ PrefabInstance:
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
-      value: 1000
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766494, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
@@ -2511,7 +2511,7 @@ PrefabInstance:
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
-      value: -1000
+      value: -800
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766494, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
@@ -3715,7 +3715,22 @@ PrefabInstance:
     - target: {fileID: 5132678083535184553, guid: ff2e2660d98ddfe4cbd69eb2c30cc9e0,
         type: 3}
       propertyPath: m_Mass
-      value: 0.02
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132678083535184553, guid: ff2e2660d98ddfe4cbd69eb2c30cc9e0,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132678083535184553, guid: ff2e2660d98ddfe4cbd69eb2c30cc9e0,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132678083535184553, guid: ff2e2660d98ddfe4cbd69eb2c30cc9e0,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5132678083535184566, guid: ff2e2660d98ddfe4cbd69eb2c30cc9e0,
         type: 3}
