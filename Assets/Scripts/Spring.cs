@@ -8,8 +8,8 @@ public class Spring : MonoBehaviour
     public float maxPressedTime = 1f;
     public float minSpringScale = .2f;
 
-    public float minSpringForce = 10f;
-    public float maxSpringForce = 30f;
+    public float minSpringForce = 20f;
+    public float maxSpringForce = 60f;
 
     GameObject parentObject;
     Rigidbody2D ballRigidBody;
@@ -38,7 +38,7 @@ public class Spring : MonoBehaviour
             float pushForce = Mathf.Lerp(minSpringForce,maxSpringForce,timePressed / maxPressedTime);
             AddForceToBall(pushForce);
             timePressed = 0;
-            LerpSpringScale();
+            StartCoroutine(ResetSpring());
         }
     }
 
@@ -62,5 +62,13 @@ public class Spring : MonoBehaviour
     {
         if (ballRigidBody != null)
             ballRigidBody.AddForce(new Vector2(0, 1.0f) * pushForce, ForceMode2D.Impulse);
+    }
+
+    IEnumerator ResetSpring()
+    {
+        selfCollision.enabled = false;
+        LerpSpringScale();
+        yield return new WaitForSeconds(.1f);
+        selfCollision.enabled = true;
     }
 }
