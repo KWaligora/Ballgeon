@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8841114427268164592}
   - component: {fileID: 8841114427268164593}
   - component: {fileID: 3233556973551113783}
+  - component: {fileID: 7213400999190960164}
   m_Layer: 0
   m_Name: B_skull
   m_TagString: Untagged
@@ -50,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dc6577fe01f5c1c42817c01a00bca6b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,3 +99,15 @@ CircleCollider2D:
   m_Offset: {x: 0.004070461, y: 0.018316865}
   serializedVersion: 2
   m_Radius: 0.16743678
+--- !u!114 &7213400999190960164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841114427268164599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2806f3a8556a13d4cb15796400802c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
