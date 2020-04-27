@@ -7,10 +7,12 @@ public class Tint : MonoBehaviour
     Material tintMaterial;
     float tintTime = 0.3f;
     int TintStrength = 3;
+    public Color color;
 
     void Start()
     {
-        tintMaterial = GetComponent<SpriteRenderer>().material;  
+        tintMaterial = GetComponent<SpriteRenderer>().material;
+        tintMaterial.SetColor("_Color", color);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
