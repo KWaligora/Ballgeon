@@ -1583,12 +1583,12 @@ PrefabInstance:
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -5.1030083
+      value: -4.902191
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.8589179
+      value: -1.0548939
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
@@ -1619,12 +1619,12 @@ PrefabInstance:
     - target: {fileID: 7516114833612766495, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.747
+      value: 0.552
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766495, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.74
+      value: -4.539
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766495, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
@@ -2473,22 +2473,27 @@ PrefabInstance:
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -5.1030025
+      value: -4.8996997
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -3.7959936
+      value: -3.57605
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_Anchor.x
-      value: -0.6
+      value: -0.625
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_Motor.m_MotorSpeed
       value: -800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516114833612766491, guid: a3a42118264d6474abece0d2f2fcfbb1,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766494, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
@@ -2519,12 +2524,12 @@ PrefabInstance:
     - target: {fileID: 7516114833612766495, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -0.75505
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766495, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.74
+      value: -4.5367
       objectReference: {fileID: 0}
     - target: {fileID: 7516114833612766495, guid: a3a42118264d6474abece0d2f2fcfbb1,
         type: 3}
@@ -2912,19 +2917,21 @@ PolygonCollider2D:
       - {x: -5.3088717, y: 0.647832}
       - {x: -5.069427, y: -0.95479006}
       - {x: -4.8077354, y: -2.647989}
-      - {x: -4.5100307, y: -4.3858833}
-      - {x: -4.7283897, y: -4.407346}
+      - {x: -4.497692, y: -4.408798}
+      - {x: -4.7266273, y: -4.412634}
       - {x: -5.532987, y: 0.68984956}
       - {x: -5.2011847, y: 1.3317062}
       - {x: -5.847904, y: 4.99272}
       - {x: -6.245378, y: 4.989666}
       - {x: -4.9328527, y: -4.9698176}
       - {x: -4.3986382, y: -4.957074}
-      - {x: -2.8973227, y: -4.981022}
-      - {x: -3.8683429, y: -4.303772}
+      - {x: -2.413416, y: -4.973115}
+      - {x: -2.4119892, y: -4.839925}
+      - {x: -3.9268036, y: -4.11568}
       - {x: -4.218463, y: -2.6774316}
-    - - {x: 0.104117036, y: -4.169452}
-      - {x: -1.2158662, y: -4.9847817}
+    - - {x: 0.16516197, y: -3.9542685}
+      - {x: -1.6208513, y: -4.8414793}
+      - {x: -1.6213225, y: -5.000388}
       - {x: 0.2664193, y: -4.9979315}
       - {x: 2.4415917, y: 4.9813995}
       - {x: 1.8470861, y: 4.997025}
@@ -2935,8 +2942,8 @@ PolygonCollider2D:
       - {x: 0.45771635, y: -1.0177047}
       - {x: -0.051442266, y: -1.2760111}
       - {x: 0.23834431, y: -1.9939455}
-      - {x: -0.18788588, y: -4.0406613}
-      - {x: -0.034649014, y: -4.043061}
+      - {x: -0.08051503, y: -3.5110948}
+      - {x: 0.097334266, y: -3.52279}
 --- !u!1 &1735905483
 GameObject:
   m_ObjectHideFlags: 0
