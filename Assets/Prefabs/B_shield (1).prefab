@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5110877056191416584}
   - component: {fileID: 5110877056191416585}
   - component: {fileID: 7647352358920991940}
+  - component: {fileID: 2771982202017437761}
   m_Layer: 0
   m_Name: B_shield (1)
   m_TagString: Untagged
@@ -104,3 +105,15 @@ EdgeCollider2D:
   - {x: 0.15357077, y: 0.019190788}
   - {x: 0.38522768, y: -0.62606716}
   - {x: -0.12691188, y: -0.46443176}
+--- !u!114 &2771982202017437761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5110877056191416583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2806f3a8556a13d4cb15796400802c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
