@@ -11,6 +11,8 @@ public class Spring : MonoBehaviour
     public float minSpringForce = 20f;
     public float maxSpringForce = 60f;
 
+    public GameObject exitLockObject;
+
     GameObject parentObject;
     Rigidbody2D ballRigidBody;
     BoxCollider2D selfCollision;
@@ -51,6 +53,9 @@ public class Spring : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         ballRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
+
+        exitLockObject.GetComponent<SpriteRenderer>().enabled = false;
+        exitLockObject.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
