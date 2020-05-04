@@ -20,7 +20,6 @@ public class Tint : MonoBehaviour
         tintMaterial.SetVector("_Vector4", new Vector4(TintStrength, TintStrength, TintStrength, 1));
         StartCoroutine(revertTint());
     }
-
     IEnumerator revertTint()
     {
         yield return new WaitForSeconds(tintTime);
