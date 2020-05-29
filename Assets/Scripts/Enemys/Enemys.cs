@@ -15,7 +15,7 @@ public class Enemys : MonoBehaviour
     private int currentHealth;
 
     [Header("List")]
-    static GameObject[] enemys = new GameObject[4];
+    static List<GameObject> enemys = new List<GameObject>();
     static int enemysCounter = 0;
 
     [Header("Other")]
@@ -24,11 +24,11 @@ public class Enemys : MonoBehaviour
 
     protected virtual void Start()
     {
-        enemys[enemysCounter] = gameObject;
+        enemys.Add(gameObject);
         enemysCounter++;
+
         nextPos = pos2.position;
-        currentHealth = maxHealth;
-        Debug.Log(enemys.Length);
+        currentHealth = maxHealth;        
 
         material = GetComponent<SpriteRenderer>().material;
     }
@@ -102,7 +102,7 @@ public class Enemys : MonoBehaviour
             Respawn();
     }
 
-    //Enable collision and spriteRenderer
+    //Enable collision and spriteRenderer. maxhealth++
     private void Respawn()
     {        
         foreach(GameObject enemy in enemys)
