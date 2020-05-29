@@ -6,6 +6,6 @@ public class Ghost : Enemys
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit");
+        TakeDamage();
     }
 }

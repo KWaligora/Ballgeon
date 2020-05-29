@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Enemys : MonoBehaviour
 {
-    [Header ("Movement")]
+    [Header("Movement")]
     public float speed;
     public Transform pos1, pos2;
     protected bool isFaceingLeft;
     private Vector3 nextPos;
 
+    [Header("Health")]
+    public int maxHealth;
+    private int currentHealth;
+
+    [Header("Other")]
+    Material material;
+
     protected virtual void Start()
     {
-        nextPos = pos2.position;       
+        nextPos = pos2.position;
+        currentHealth = maxHealth;
+
+        material = GetComponent<SpriteRenderer>().material;
     }
 
     protected void Update()
@@ -20,6 +30,7 @@ public class Enemys : MonoBehaviour
         SetMovement();
     }
 
+    #region Movement
     //flip character
     protected void Flip()
     {
@@ -52,4 +63,30 @@ public class Enemys : MonoBehaviour
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
     }
+    #endregion
+
+    #region HealthAndDamage
+    //Take damage when hit
+    protected void TakeDamage()
+    {
+        currentHealth -= 1;
+        if (currentHealth <= 0)
+            Die();
+        else
+            StartCoroutine(SetDamageTint());
+    }
+
+    private IEnumerator SetDamageTint()
+    {
+        material.SetVector("_Vector4", new Vector4(2, 2, 2, 1));
+        yield return new WaitForSeconds(0.25f);
+        material.SetVector("_Vector4", new Vector4(1, 1, 1, 1));
+    }
+
+    //Destroy object
+    private void Die()
+    {
+        Destroy(gameObject);
+    }
+    #endregion
 }
