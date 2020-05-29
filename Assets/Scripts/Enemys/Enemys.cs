@@ -30,7 +30,7 @@ public class Enemys : MonoBehaviour
     }
 
     //Set movement rules
-    protected virtual void SetMovement()
+    protected void SetMovement()
     {
         if (transform.position == pos1.position)
         {
