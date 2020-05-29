@@ -18,6 +18,12 @@ public class Enemys : MonoBehaviour
     static List<GameObject> enemys = new List<GameObject>();
     static int enemysCounter = 0;
 
+    [Header("Level")]
+    List<Vector4> lvlColors = new List<Vector4>();
+    Vector4 currentColor;
+    int currentLvl = 0;
+    int maxlvl;
+
     [Header("Other")]
     Material material;   
 
@@ -30,6 +36,9 @@ public class Enemys : MonoBehaviour
         currentHealth = maxHealth;        
 
         material = GetComponent<SpriteRenderer>().material;
+        LoadColors();
+        maxlvl = lvlColors.Count;
+        currentColor = lvlColors[currentLvl];
     }
 
     protected void Update()
@@ -85,9 +94,9 @@ public class Enemys : MonoBehaviour
 
     private IEnumerator SetDamageTint()
     {
-        material.SetVector("_Vector4", new Vector4(2, 2, 2, 1));
+        material.SetVector("_Vector4", currentColor * 2);
         yield return new WaitForSeconds(0.25f);
-        material.SetVector("_Vector4", new Vector4(1, 1, 1, 1));
+        material.SetVector("_Vector4", currentColor);
     }
 
     //Disable collision and spriteRenderer
@@ -103,15 +112,34 @@ public class Enemys : MonoBehaviour
 
     //Enable collision and spriteRenderer. maxhealth++
     private void Respawn()
-    {        
+    {
+        SetNewLvl();
         foreach(GameObject enemy in enemys)
         {
             enemy.GetComponent<Enemys>().maxHealth += 1;
             enemy.GetComponent<Enemys>().currentHealth = enemy.GetComponent<Enemys>().maxHealth;
             enemy.GetComponent<Collider2D>().enabled = true;
             enemy.GetComponent<SpriteRenderer>().enabled = true;
+            currentColor = lvlColors[currentLvl];
+            enemy.GetComponent<Enemys>().material.SetVector("_Vector4", currentColor);
+
             enemysCounter++;
         }
     }
     #endregion
+    //Set new value of currentLvl
+    void SetNewLvl()
+    {
+        currentLvl++;
+        if (currentLvl > maxlvl)
+            currentLvl = 0;
+    }
+
+    //Load color to lvlcolours list
+    void LoadColors()
+    {
+        lvlColors.Add(new Vector4(1, 1, 1, 1));
+        lvlColors.Add(new Vector4(1, 0.5f, 0.5f, 1));
+        lvlColors.Add(new Vector4(0.5f, 0.5f, 1, 1));
+    }
 }
