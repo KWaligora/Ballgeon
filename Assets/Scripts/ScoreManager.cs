@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static ScoreManager Instance { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public void Awake()
     {
-        
+        Instance = this;
     }
 }
