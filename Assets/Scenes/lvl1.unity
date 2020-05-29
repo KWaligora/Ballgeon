@@ -3787,6 +3787,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96733b5dfb13d6d488f0aa8d17e00555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioList: []
+  musicList: []
+  mainMenuTheme:
+    key: 0
+    desiredVolume: 0
+    clip: {fileID: 0}
+    source: {fileID: 0}
+  fadeDuration: 0
 --- !u!4 &1466328974
 Transform:
   m_ObjectHideFlags: 0
@@ -6067,6 +6075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb330ed8e75aa049b74202b0452ecf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InGameUI: {fileID: 0}
 --- !u!4 &2117159823
 Transform:
   m_ObjectHideFlags: 0
@@ -6190,6 +6199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2126317143}
+  - component: {fileID: 2126317144}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -6220,6 +6230,21 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5999756, y: -0.7999878}
   m_SizeDelta: {x: -1, y: -6}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &2126317144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126317142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a72c9cd085d1b4a88209787df8bff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 0}
+  LevelText: {fileID: 0}
+  LivesText: {fileID: 0}
 --- !u!1 &2139260717
 GameObject:
   m_ObjectHideFlags: 0
