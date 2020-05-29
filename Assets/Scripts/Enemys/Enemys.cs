@@ -12,18 +12,23 @@ public class Enemys : MonoBehaviour
 
     [Header("Health")]
     public int maxHealth;
-    private int currentHealth;    
+    private int currentHealth;
+
+    [Header("List")]
+    static GameObject[] enemys = new GameObject[4];
+    static int enemysCounter = 0;
 
     [Header("Other")]
-    Material material;
-    static int enemysCounter = 0;
+    Material material;   
     bool respawning = false;
 
     protected virtual void Start()
     {
+        enemys[enemysCounter] = gameObject;
         enemysCounter++;
         nextPos = pos2.position;
         currentHealth = maxHealth;
+        Debug.Log(enemys.Length);
 
         material = GetComponent<SpriteRenderer>().material;
     }
@@ -31,10 +36,6 @@ public class Enemys : MonoBehaviour
     protected void Update()
     {
         SetMovement();
-        if (enemysCounter <= 0)
-        {
-            Respawn();
-        }
     }
 
     #region Movement
@@ -96,29 +97,22 @@ public class Enemys : MonoBehaviour
         enemysCounter--;
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        CheckEnemysCounter();
-    }
 
-    //if there is no enemys give 0.1s time for respawn
-    private void CheckEnemysCounter()
-    {
         if (enemysCounter <= 0)
-            StartCoroutine(ResetEnemyCounter());
+            Respawn();
     }
 
     //Enable collision and spriteRenderer
     private void Respawn()
     {        
-        currentHealth = maxHealth;        
-        gameObject.GetComponent<Collider2D>().enabled = true;
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-    }
-
-    IEnumerator ResetEnemyCounter()
-    {
-        yield return new WaitForSeconds(0.1f);
-        enemysCounter = 5;
-
+        foreach(GameObject enemy in enemys)
+        {
+            enemy.GetComponent<Enemys>().maxHealth += 1;
+            enemy.GetComponent<Enemys>().currentHealth = enemy.GetComponent<Enemys>().maxHealth;
+            enemy.GetComponent<Collider2D>().enabled = true;
+            enemy.GetComponent<SpriteRenderer>().enabled = true;
+            enemysCounter++;
+        }
     }
     #endregion
 }
