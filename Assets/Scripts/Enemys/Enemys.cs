@@ -12,13 +12,16 @@ public class Enemys : MonoBehaviour
 
     [Header("Health")]
     public int maxHealth;
-    private int currentHealth;
+    private int currentHealth;    
 
     [Header("Other")]
     Material material;
+    static int enemysCounter = 0;
+    bool respawning = false;
 
     protected virtual void Start()
     {
+        enemysCounter++;
         nextPos = pos2.position;
         currentHealth = maxHealth;
 
@@ -28,6 +31,10 @@ public class Enemys : MonoBehaviour
     protected void Update()
     {
         SetMovement();
+        if (enemysCounter <= 0)
+        {
+            Respawn();
+        }
     }
 
     #region Movement
@@ -83,10 +90,35 @@ public class Enemys : MonoBehaviour
         material.SetVector("_Vector4", new Vector4(1, 1, 1, 1));
     }
 
-    //Destroy object
+    //Disable collision and spriteRenderer
     private void Die()
     {
-        Destroy(gameObject);
+        enemysCounter--;
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        CheckEnemysCounter();
+    }
+
+    //if there is no enemys give 0.1s time for respawn
+    private void CheckEnemysCounter()
+    {
+        if (enemysCounter <= 0)
+            StartCoroutine(ResetEnemyCounter());
+    }
+
+    //Enable collision and spriteRenderer
+    private void Respawn()
+    {        
+        currentHealth = maxHealth;        
+        gameObject.GetComponent<Collider2D>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    IEnumerator ResetEnemyCounter()
+    {
+        yield return new WaitForSeconds(0.1f);
+        enemysCounter = 5;
+
     }
     #endregion
 }
