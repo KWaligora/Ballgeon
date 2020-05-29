@@ -10,9 +10,13 @@ public class Enemys : MonoBehaviour
     protected bool isFaceingLeft;
     private Vector3 nextPos;
 
-    protected void Start()
+    protected virtual void Start()
     {
-        nextPos = pos2.position;
+        nextPos = pos2.position;       
+    }
+
+    protected void Update()
+    {
         SetMovement();
     }
 
@@ -29,10 +33,16 @@ public class Enemys : MonoBehaviour
     protected virtual void SetMovement()
     {
         if (transform.position == pos1.position)
+        {
+            Flip();
             nextPos = pos2.position;
+        }
 
         else if (transform.position == pos2.position)
+        {
+            Flip();
             nextPos = pos1.position;
+        }
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
