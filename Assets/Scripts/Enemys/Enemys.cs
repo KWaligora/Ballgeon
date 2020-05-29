@@ -52,9 +52,4 @@ public class Enemys : MonoBehaviour
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Hit");
-    }
 }
