@@ -20,7 +20,6 @@ public class Enemys : MonoBehaviour
 
     [Header("Other")]
     Material material;   
-    bool respawning = false;
 
     protected virtual void Start()
     {
