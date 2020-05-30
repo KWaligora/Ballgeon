@@ -6,6 +6,7 @@ public class Ghost : Enemys
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        TakeDamage();
+        if(collision.gameObject.tag.Equals("Player"))
+            TakeDamage();
     }
 }

@@ -13,6 +13,7 @@ public class Enemys : MonoBehaviour
     [Header("Health")]
     public int maxHealth;
     private int currentHealth;
+    bool immortal = false;
 
     [Header("List")]
     static List<GameObject> enemys = new List<GameObject>();
@@ -20,14 +21,13 @@ public class Enemys : MonoBehaviour
 
     [Header("Level")]
     List<Vector4> lvlColors = new List<Vector4>();
-    Vector4 currentColor;
-    int currentLvl = 0;
-    int maxlvl;
+    static int currentLvl = 0;
+    static int maxlvl;
 
     [Header("Other")]
     Material material;   
 
-    protected virtual void Start()
+    protected void Start()
     {
         enemys.Add(gameObject);
         enemysCounter++;
@@ -38,7 +38,6 @@ public class Enemys : MonoBehaviour
         material = GetComponent<SpriteRenderer>().material;
         LoadColors();
         maxlvl = lvlColors.Count;
-        currentColor = lvlColors[currentLvl];
     }
 
     protected void Update()
@@ -85,18 +84,32 @@ public class Enemys : MonoBehaviour
     //Take damage when hit
     protected void TakeDamage()
     {
-        currentHealth -= 1;
-        if (currentHealth <= 0)
-            Die();
-        else
-            StartCoroutine(SetDamageTint());
+        if (!immortal)
+        {
+            currentHealth -= 1;
+            if (currentHealth <= 0)
+                Die();
+            else
+            {
+                StartCoroutine(Immortality());
+                StartCoroutine(SetDamageTint());
+            }
+        }
+    }
+
+    //Object is untouchable for a moment after hit
+    private IEnumerator Immortality()
+    {
+        immortal = true;
+        yield return new WaitForSeconds(0.25f);
+        immortal = false;
     }
 
     private IEnumerator SetDamageTint()
     {
-        material.SetVector("_Vector4", currentColor * 2);
+        material.SetVector("_Vector4", lvlColors[currentLvl] * 2);
         yield return new WaitForSeconds(0.25f);
-        material.SetVector("_Vector4", currentColor);
+        material.SetVector("_Vector4", lvlColors[currentLvl]);
     }
 
     //Disable collision and spriteRenderer
@@ -109,29 +122,28 @@ public class Enemys : MonoBehaviour
         if (enemysCounter <= 0)
             Respawn();
     }
-
+     
     //Enable collision and spriteRenderer. maxhealth++
     private void Respawn()
     {
         SetNewLvl();
         foreach(GameObject enemy in enemys)
-        {
+        {            
             enemy.GetComponent<Enemys>().maxHealth += 1;
             enemy.GetComponent<Enemys>().currentHealth = enemy.GetComponent<Enemys>().maxHealth;
             enemy.GetComponent<Collider2D>().enabled = true;
-            enemy.GetComponent<SpriteRenderer>().enabled = true;
-            currentColor = lvlColors[currentLvl];
-            enemy.GetComponent<Enemys>().material.SetVector("_Vector4", currentColor);
+            enemy.GetComponent<SpriteRenderer>().enabled = true;       
+            enemy.GetComponent<Enemys>().material.SetVector("_Vector4", lvlColors[currentLvl]);
 
             enemysCounter++;
         }
     }
     #endregion
     //Set new value of currentLvl
-    void SetNewLvl()
+    static void SetNewLvl()
     {
         currentLvl++;
-        if (currentLvl > maxlvl)
+        if (currentLvl >= maxlvl)
             currentLvl = 0;
     }
 
