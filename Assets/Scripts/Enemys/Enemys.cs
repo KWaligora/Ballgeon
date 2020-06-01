@@ -146,6 +146,8 @@ public class Enemys : MonoBehaviour
         currentLvl++;
         if (currentLvl >= maxlvl)
             currentLvl = 0;
+
+        ScoreManager.Instance.SetLevel(currentLvl + 1);
     }
 
     //Load color to lvlcolours list
