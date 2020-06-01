@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7647352358920991940}
   - component: {fileID: 2771982202017437761}
   - component: {fileID: -1245520891314770542}
+  - component: {fileID: 1743983936339215748}
   m_Layer: 0
   m_Name: B_shield (1)
   m_TagString: Untagged
@@ -133,3 +134,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTrigger: 0
   ScoreAmount: 30
+--- !u!114 &1743983936339215748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5110877056191416583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56b65a9bc539eb4aa8fdd12e7ed30a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundKey: 8
+  IsTrigger: 0

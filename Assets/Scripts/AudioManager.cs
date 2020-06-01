@@ -178,7 +178,8 @@ public enum AudioKey
     Bouncer,
     Triangle,
     Spike,
-    Barrel
+    Barrel,
+    Attack
 }
 
 //Stores audio source and track data

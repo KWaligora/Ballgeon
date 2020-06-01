@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3233556973551113783}
   - component: {fileID: 7213400999190960164}
   - component: {fileID: -9040560845705437381}
+  - component: {fileID: 8406249459024249276}
   m_Layer: 0
   m_Name: B_skull
   m_TagString: Untagged
@@ -127,3 +128,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTrigger: 0
   ScoreAmount: 50
+--- !u!114 &8406249459024249276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8841114427268164599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56b65a9bc539eb4aa8fdd12e7ed30a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundKey: 7
+  IsTrigger: 0
