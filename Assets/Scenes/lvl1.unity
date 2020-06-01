@@ -4249,41 +4249,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioList:
   - key: 7
-    desiredVolume: 0.6
+    desiredVolume: 0.3
     clip: {fileID: 8300000, guid: ac1760f865a27441089901f5df301272, type: 3}
     source: {fileID: 0}
   - key: 10
-    desiredVolume: 1
+    desiredVolume: 0.5
     clip: {fileID: 8300000, guid: e7c5383e7ff8745eb95e5fa898e036ce, type: 3}
     source: {fileID: 0}
   - key: 8
-    desiredVolume: 1
+    desiredVolume: 0.5
     clip: {fileID: 8300000, guid: e86bc514774f9864cbc33f257bc7fa5a, type: 3}
     source: {fileID: 0}
   - key: 5
-    desiredVolume: 1
+    desiredVolume: 0.5
     clip: {fileID: 8300000, guid: e86bc514774f9864cbc33f257bc7fa5a, type: 3}
     source: {fileID: 0}
   - key: 11
-    desiredVolume: 0.5
+    desiredVolume: 0.25
     clip: {fileID: 8300000, guid: a0b7484687ce8cd42802ddfb80f5ac88, type: 3}
     source: {fileID: 0}
   musicList:
   - key: 1
-    desiredVolume: 0.6
+    desiredVolume: 0.3
     clip: {fileID: 8300000, guid: c788ee5e8143648bc936ae1d7e436db1, type: 3}
     source: {fileID: 0}
   - key: 2
-    desiredVolume: 0.6
+    desiredVolume: 0.3
     clip: {fileID: 8300000, guid: 9113a8a90b5a5ca42a7d9af05d6cf620, type: 3}
     source: {fileID: 0}
   - key: 3
-    desiredVolume: 0.6
+    desiredVolume: 0.3
     clip: {fileID: 8300000, guid: 56638f17928dc2842b35b0d607a52c9b, type: 3}
     source: {fileID: 0}
   mainMenuTheme:
     key: 0
-    desiredVolume: 0.6
+    desiredVolume: 0.3
     clip: {fileID: 8300000, guid: d616fcc1216dc44638ad73bd2e4ae2e7, type: 3}
     source: {fileID: 0}
   fadeDuration: 1
