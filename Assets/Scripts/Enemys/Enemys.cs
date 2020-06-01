@@ -22,7 +22,8 @@ public class Enemys : MonoBehaviour
     [Header("Level")]
     List<Vector4> lvlColors = new List<Vector4>();
     static int currentLvl = 0;
-    static int maxlvl;
+    static int colorCount;
+    static int currentColorIndex;
 
     [Header("Other")]
     Material material;   
@@ -37,7 +38,8 @@ public class Enemys : MonoBehaviour
 
         material = GetComponent<SpriteRenderer>().material;
         LoadColors();
-        maxlvl = lvlColors.Count;
+        colorCount = lvlColors.Count;
+        currentColorIndex = 0;
     }
 
     protected void Update()
@@ -107,9 +109,9 @@ public class Enemys : MonoBehaviour
 
     private IEnumerator SetDamageTint()
     {
-        material.SetVector("_Vector4", lvlColors[currentLvl] * 2);
+        material.SetVector("_Vector4", lvlColors[currentColorIndex] * 2);
         yield return new WaitForSeconds(0.25f);
-        material.SetVector("_Vector4", lvlColors[currentLvl]);
+        material.SetVector("_Vector4", lvlColors[currentColorIndex]);
     }
 
     //Disable collision and spriteRenderer
@@ -133,7 +135,7 @@ public class Enemys : MonoBehaviour
             enemy.GetComponent<Enemys>().currentHealth = enemy.GetComponent<Enemys>().maxHealth;
             enemy.GetComponent<Collider2D>().enabled = true;
             enemy.GetComponent<SpriteRenderer>().enabled = true;       
-            enemy.GetComponent<Enemys>().material.SetVector("_Vector4", lvlColors[currentLvl]);
+            enemy.GetComponent<Enemys>().material.SetVector("_Vector4", lvlColors[currentColorIndex]);
 
             enemysCounter++;
         }
@@ -144,8 +146,7 @@ public class Enemys : MonoBehaviour
     static void SetNewLvl()
     {
         currentLvl++;
-        if (currentLvl >= maxlvl)
-            currentLvl = 0;
+        currentColorIndex = currentLvl % colorCount;
 
         ScoreManager.Instance.SetLevel(currentLvl + 1);
     }
