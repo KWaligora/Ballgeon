@@ -43,11 +43,16 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int value)
     {
-        InGameUI.Score += value;
+        InGameUI.Score += value * InGameUI.Level;
     }
 
     public void AddLives(int value)
     {
         InGameUI.Lives += value;
+    }
+
+    public void SetLevel(int value)
+    {
+        InGameUI.Level = value;
     }
 }
