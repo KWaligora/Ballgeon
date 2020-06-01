@@ -139,6 +139,7 @@ public class Enemys : MonoBehaviour
         }
     }
     #endregion
+
     //Set new value of currentLvl
     static void SetNewLvl()
     {
