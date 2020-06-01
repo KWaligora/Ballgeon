@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SettingsManager : MonoBehaviour
 {
-    private bool soundOn;
-    private bool musicOn;
+    private bool soundOn = true;
+    private bool musicOn = true;
 
     public static SettingsManager Instance { get; private set; }
 

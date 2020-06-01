@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7493562938051145793}
   - component: {fileID: 1092340973194111562}
   - component: {fileID: -2507254811846947368}
+  - component: {fileID: 4499242175879992160}
   m_Layer: 0
   m_Name: B_barrel
   m_TagString: Untagged
@@ -127,3 +128,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTrigger: 0
   ScoreAmount: 10
+--- !u!114 &4499242175879992160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427070133897020419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56b65a9bc539eb4aa8fdd12e7ed30a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundKey: 10
+  IsTrigger: 0

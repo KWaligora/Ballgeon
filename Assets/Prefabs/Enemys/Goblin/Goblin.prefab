@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2826189838300726328}
   - component: {fileID: 7158456935410495174}
   - component: {fileID: 7530330412860070160}
+  - component: {fileID: 6178229424765026852}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -228,3 +229,17 @@ MonoBehaviour:
   pos1: {fileID: 4382344751497609076}
   pos2: {fileID: 7449441208741799853}
   maxHealth: 1
+--- !u!114 &6178229424765026852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265465370615615398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56b65a9bc539eb4aa8fdd12e7ed30a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundKey: 11
+  IsTrigger: 0
