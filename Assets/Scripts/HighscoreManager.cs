@@ -13,6 +13,14 @@ public class HighscoreManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
         highscoreSave = HighscoreSave.GetSavedOrDefault();
     }
 

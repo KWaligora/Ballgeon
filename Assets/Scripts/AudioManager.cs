@@ -19,7 +19,15 @@ public class AudioManager : MonoBehaviour
     //Adds audio sources for sounds
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
 
         for (int i = 0; i < audioList.Length; i++)
         {

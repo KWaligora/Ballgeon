@@ -31,6 +31,13 @@ public class SettingsManager : MonoBehaviour
 
     public void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else 
+        { 
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 }
