@@ -4270,20 +4270,20 @@ MonoBehaviour:
     source: {fileID: 0}
   musicList:
   - key: 1
-    desiredVolume: 0.3
+    desiredVolume: 0.15
     clip: {fileID: 8300000, guid: c788ee5e8143648bc936ae1d7e436db1, type: 3}
     source: {fileID: 0}
   - key: 2
-    desiredVolume: 0.3
+    desiredVolume: 0.15
     clip: {fileID: 8300000, guid: 9113a8a90b5a5ca42a7d9af05d6cf620, type: 3}
     source: {fileID: 0}
   - key: 3
-    desiredVolume: 0.3
+    desiredVolume: 0.15
     clip: {fileID: 8300000, guid: 56638f17928dc2842b35b0d607a52c9b, type: 3}
     source: {fileID: 0}
   mainMenuTheme:
     key: 0
-    desiredVolume: 0.3
+    desiredVolume: 0.15
     clip: {fileID: 8300000, guid: d616fcc1216dc44638ad73bd2e4ae2e7, type: 3}
     source: {fileID: 0}
   fadeDuration: 1
