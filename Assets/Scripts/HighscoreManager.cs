@@ -12,7 +12,6 @@ public class HighscoreManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
         if (Instance == null)
             Instance = this;
         else
@@ -33,6 +32,11 @@ public class HighscoreManager : MonoBehaviour
     {
         highscoreSave.Highscores[highscoreSave.Highscores.Length - 1] = highscore;
         highscoreSave.Highscores = highscoreSave.Highscores.OrderByDescending(h => h.Score).ToArray();
+    }
+
+    public string GetHighscoreString()
+    {
+        return highscoreSave.ToString();
     }
 
     //Save the highscores on quit

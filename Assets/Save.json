@@ -1,0 +1,44 @@
+{
+    "Highscores": [
+        {
+            "Name": "aaa",
+            "Score": 10000
+        },
+        {
+            "Name": "bbb",
+            "Score": 9000
+        },
+        {
+            "Name": "ccc",
+            "Score": 8000
+        },
+        {
+            "Name": "ddd",
+            "Score": 7000
+        },
+        {
+            "Name": "eee",
+            "Score": 6000
+        },
+        {
+            "Name": "fff",
+            "Score": 5000
+        },
+        {
+            "Name": "ggg",
+            "Score": 4000
+        },
+        {
+            "Name": "hhh",
+            "Score": 3000
+        },
+        {
+            "Name": "iii",
+            "Score": 2000
+        },
+        {
+            "Name": "jjj",
+            "Score": 1000
+        }
+    ]
+}

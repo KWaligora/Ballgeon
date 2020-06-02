@@ -107,7 +107,7 @@ public class AudioManager : MonoBehaviour
 
         if (currentMusic != null)
             StopCoroutine(playNextMusicCoroutine);
-        StartCoroutine(FadeMusicInOut(mainMenuTheme, GetRandomMusic()));
+        StartCoroutine(FadeMusicInOut(currentMusic, GetRandomMusic()));
     }
 
     //Get random game music
