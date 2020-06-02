@@ -7,6 +7,9 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
     public HUD InGameUI;
+    public HighscoreDisplay HighscoreUI;
+    public GameOver GameOverUI;
+    public HighscorePrompt HighscorePromptUI;
     public BallRespawn respawnReference;
 
     public void Awake()
@@ -22,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     public void Initialize()
     {
         InGameUI.Score = 0;
-        InGameUI.Lives = 3;
+        InGameUI.Lives = 1;
         InGameUI.Level = 1;
     }
 
@@ -33,9 +36,14 @@ public class ScoreManager : MonoBehaviour
         AddLives(-1);
         if (IsDead())
         {
-            //TODO highscore logic
-            respawnReference.RespawnBall(); //TODO Remove after highscore UI is 
-            Initialize(); //TODO Remove after highscore UI is 
+            HighscoreUI.gameObject.SetActive(true);
+            GameOverUI.gameObject.SetActive(true);
+            int PlayerScore = InGameUI.Score;
+            if (HighscoreManager.Instance.IsHighscore(PlayerScore))
+            {
+                HighscorePromptUI.PlayerHighscore = PlayerScore;
+                HighscorePromptUI.gameObject.SetActive(true);
+            }
         }
         else
             respawnReference.RespawnBall();
