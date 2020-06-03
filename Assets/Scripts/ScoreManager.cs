@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     public void Initialize()
     {
         InGameUI.Score = 0;
-        InGameUI.Lives = 1;
+        InGameUI.Lives = 3;
         InGameUI.Level = 1;
     }
 
