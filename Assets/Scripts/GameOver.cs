@@ -7,11 +7,13 @@ public class GameOver : MonoBehaviour
 {
     public void OnNewGame()
     {
+        Enemys.ResetStaticVariables();
         SceneManager.LoadScene("lvl1");
     }
 
     public void OnMainMenu()
     {
+        Enemys.ResetStaticVariables();
         SceneManager.LoadScene("MainMenu");
     }
 }

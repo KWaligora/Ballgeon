@@ -22,8 +22,9 @@ public class Enemys : MonoBehaviour
     [Header("Level")]
     List<Vector4> lvlColors = new List<Vector4>();
     static int currentLvl = 0;
-    static int colorCount;
     static int currentColorIndex;
+    static int colorCount;
+    
 
     [Header("Other")]
     Material material;   
@@ -40,6 +41,7 @@ public class Enemys : MonoBehaviour
         LoadColors();
         colorCount = lvlColors.Count;
         currentColorIndex = 0;
+        Debug.Log(enemys.Count);
     }
 
     protected void Update()
@@ -123,6 +125,8 @@ public class Enemys : MonoBehaviour
 
         if (enemysCounter <= 0)
             Respawn();
+
+        Debug.Log(enemysCounter);
     }
      
     //Enable collision and spriteRenderer. maxhealth++
@@ -151,9 +155,18 @@ public class Enemys : MonoBehaviour
         ScoreManager.Instance.SetLevel(currentLvl + 1);
     }
 
+    //Reset static variables on lvl reload
+    public static void ResetStaticVariables()
+    {
+        enemys.Clear();
+        enemysCounter = 0;
+        currentLvl = 0;
+    }
+
     //Load color to lvlcolours list
     void LoadColors()
     {
+        lvlColors.Clear();
         lvlColors.Add(new Vector4(1, 1, 1, 1));
         lvlColors.Add(new Vector4(1, 0.5f, 0.5f, 1));
         lvlColors.Add(new Vector4(0.5f, 0.5f, 1, 1));
