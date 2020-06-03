@@ -44,6 +44,11 @@ public class HighscoreManager : MonoBehaviour
     {
         HighscoreSave.Save(highscoreSave);
     }
+
+    public void ResetHighscore()
+    {
+        highscoreSave = new HighscoreSave();
+    }
   
 
 }
