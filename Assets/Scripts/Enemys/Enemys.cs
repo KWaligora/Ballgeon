@@ -24,10 +24,10 @@ public class Enemys : MonoBehaviour
     static int currentLvl = 0;
     static int currentColorIndex;
     static int colorCount;
-    
 
     [Header("Other")]
-    Material material;   
+    Material material;
+    const int BONUS_POINTS = 50;
 
     protected void Start()
     {
@@ -150,6 +150,7 @@ public class Enemys : MonoBehaviour
         currentColorIndex = currentLvl % colorCount;
 
         ScoreManager.Instance.SetLevel(currentLvl + 1);
+        ScoreManager.Instance.AddScore(BONUS_POINTS); //bonus score for leveling up
     }
 
     //Reset static variables on lvl reload
