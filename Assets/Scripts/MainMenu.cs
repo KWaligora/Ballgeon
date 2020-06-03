@@ -17,17 +17,17 @@ public class MainMenu : MonoBehaviour
 
     public void OnHighscore()
     {
-        SwapActive(CurrentlyInRightSlot, HighscoreDisplayUI.gameObject);
+        SwapActive(CurrentlyInRightSlot, HighscoreDisplayUI);
     }
 
     public void OnCredits()
     {
-        SwapActive(CurrentlyInRightSlot, CreditsDisplayUI.gameObject);
+        SwapActive(CurrentlyInRightSlot, CreditsDisplayUI);
     }
 
     public void OnWipeSave()
     {
-        WipeSavePromptUI.SetActive(true);
+        SwapActive(CurrentlyInRightSlot, WipeSavePromptUI);
     }
 
     public void OnQuit()

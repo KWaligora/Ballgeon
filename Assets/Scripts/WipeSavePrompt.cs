@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class WipeSavePrompt : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnYes()
     {
-        
+        HighscoreManager.Instance.ResetHighscore();
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnNo()
     {
-        
+        gameObject.SetActive(false);
     }
 }
