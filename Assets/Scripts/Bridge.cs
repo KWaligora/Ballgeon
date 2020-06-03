@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bridge : MonoBehaviour
 {
     public Transform newPos;
+    public int ScoreForTeleport;
 
     static bool teleporting = false;
 
@@ -29,6 +30,7 @@ public class Bridge : MonoBehaviour
         ball.transform.position = newPos.position;
         ballRB.gravityScale = 1;
         ballRB.velocity = new Vector2(-10, -10);
+        ScoreManager.Instance.AddScore(ScoreForTeleport);
     }
 
     IEnumerator TeleportDelay()
