@@ -40,8 +40,7 @@ public class Enemys : MonoBehaviour
         material = GetComponent<SpriteRenderer>().material;
         LoadColors();
         colorCount = lvlColors.Count;
-        currentColorIndex = 0;
-        Debug.Log(enemys.Count);
+        currentColorIndex = 0;        
     }
 
     protected void Update()
