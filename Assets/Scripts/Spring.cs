@@ -5,11 +5,11 @@ using UnityEngine;
 public class Spring : MonoBehaviour
 {
     float timePressed;
-    public float maxPressedTime = 1f;
-    public float minSpringScale = .2f;
+    public float maxPressedTime;
+    public float minSpringScale;
 
-    public float minSpringForce = 20f;
-    public float maxSpringForce = 60f;
+    public float minSpringForce;
+    public float maxSpringForce;
 
     public GameObject exitLockObject;
 
