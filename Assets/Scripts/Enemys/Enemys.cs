@@ -124,8 +124,6 @@ public class Enemys : MonoBehaviour
 
         if (enemysCounter <= 0)
             Respawn();
-
-        Debug.Log(enemysCounter);
     }
      
     //Enable collision and spriteRenderer. maxhealth++
