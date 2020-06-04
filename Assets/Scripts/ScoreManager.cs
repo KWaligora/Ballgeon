@@ -44,9 +44,7 @@ public class ScoreManager : MonoBehaviour
                 HighscorePromptUI.gameObject.SetActive(true);
             }
             else
-            {
                 GameOverUI.gameObject.SetActive(true);
-            }
         }
         else
             respawnReference.RespawnBall();
