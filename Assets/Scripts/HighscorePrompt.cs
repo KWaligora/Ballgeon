@@ -12,11 +12,6 @@ public class HighscorePrompt : MonoBehaviour
     public HighscoreDisplay HighscoreDisplayUI;
     public GameOver GameOverUI;
 
-    private void Start()
-    {
-        GameOverUI = FindObjectOfType<GameOver>();
-    }
-
     public void OnCommit()
     {
         string userName = UserNameInput.text;
