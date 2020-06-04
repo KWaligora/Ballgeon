@@ -45,18 +45,6 @@ public class HighscoreSave
             return;
         File.WriteAllText(SavePath, JsonUtility.ToJson(ScoresToSave, true));
     }
-
-    public new string ToString()
-    {
-        string output = "";
-        for(int i = 0; i < Highscores.Length; i++)
-        {
-            if (i != 0)
-                output += "\n";
-            output += $"{i + 1}. " + Highscores[i].ToString();
-        }
-        return output;
-    }
 }
 
 [System.Serializable]

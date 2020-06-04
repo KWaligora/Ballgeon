@@ -34,9 +34,9 @@ public class HighscoreManager : MonoBehaviour
         highscoreSave.Highscores = highscoreSave.Highscores.OrderByDescending(h => h.Score).ToArray();
     }
 
-    public string GetHighscoreString()
+    public HighscoreSave GetHighscoreSave()
     {
-        return highscoreSave.ToString();
+        return highscoreSave;
     }
 
     //Save the highscores on quit
