@@ -10,6 +10,12 @@ public class HighscorePrompt : MonoBehaviour
     public InputField UserNameInput;
     public Button CommitButton;
     public HighscoreDisplay HighscoreDisplayUI;
+    public GameOver GameOverUI;
+
+    private void Start()
+    {
+        GameOverUI = FindObjectOfType<GameOver>();
+    }
 
     public void OnCommit()
     {
@@ -21,6 +27,7 @@ public class HighscorePrompt : MonoBehaviour
         };
         HighscoreManager.Instance.CommitHighscore(highscore);
         HighscoreDisplayUI.Refresh();
+        GameOverUI.gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 }

@@ -37,12 +37,15 @@ public class ScoreManager : MonoBehaviour
         if (IsDead())
         {
             HighscoreUI.gameObject.SetActive(true);
-            GameOverUI.gameObject.SetActive(true);
             int PlayerScore = InGameUI.Score;
             if (HighscoreManager.Instance.IsHighscore(PlayerScore))
             {
                 HighscorePromptUI.PlayerHighscore = PlayerScore;
                 HighscorePromptUI.gameObject.SetActive(true);
+            }
+            else
+            {
+                GameOverUI.gameObject.SetActive(true);
             }
         }
         else
