@@ -15,6 +15,7 @@ public class Spring : MonoBehaviour
 
     GameObject parentObject;
     Rigidbody2D ballRigidBody;
+    Ball ballScript;
     BoxCollider2D selfCollision;
 
     void Start()
@@ -52,6 +53,7 @@ public class Spring : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        ballScript = collision.gameObject.GetComponent<Ball>();
         ballRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
 
         exitLockObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -65,6 +67,8 @@ public class Spring : MonoBehaviour
 
     void AddForceToBall(float pushForce)
     {
+        if (ballScript != null)
+            ballScript.IgnoreMaxVelocity();
         if (ballRigidBody != null)
             ballRigidBody.AddForce(new Vector2(0, 1.0f) * pushForce, ForceMode2D.Impulse);
     }

@@ -9,19 +9,37 @@ public class Ball : MonoBehaviour
     Rigidbody2D myRB;
     Vector2 currentVelocity;
     Vector2 maxVelocityVector;
+    bool ignoringMaxVelocity = false;
 
     private void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
         maxVelocityVector = new Vector2(maxVelocity, maxVelocity);
     }
+    
+    //Disable velocity limit and enable it again later
+    public void IgnoreMaxVelocity()
+    {
+        ignoringMaxVelocity = true;
+        StartCoroutine(ApplyVelocityLimit());
+    }
+
+    //enable velocity limit after 2 seconds
+    IEnumerator ApplyVelocityLimit()
+    {
+        yield return new WaitForSeconds(2.0f);
+        ignoringMaxVelocity = false;
+    }
 
     private void FixedUpdate()
     {
-        currentVelocity = myRB.velocity;
-        if (currentVelocity.magnitude > maxVelocityVector.magnitude) //if current velocity > max velocity use max velocity
+        if (!ignoringMaxVelocity)
         {
-            myRB.velocity = currentVelocity.normalized * maxVelocity;
-        }        
+            currentVelocity = myRB.velocity;
+            if (currentVelocity.magnitude > maxVelocityVector.magnitude) //if current velocity > max velocity use max velocity
+            {
+                myRB.velocity = currentVelocity.normalized * maxVelocity;
+            }
+        }
     }
 }
