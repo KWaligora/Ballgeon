@@ -11,6 +11,8 @@ public class Ball : MonoBehaviour
     Vector2 maxVelocityVector;
     bool ignoringMaxVelocity = false;
 
+    public ParticleDictionaryEntry[] ParticleDictionary;
+
     private void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
@@ -42,4 +44,18 @@ public class Ball : MonoBehaviour
             }
         }
     }
+}
+
+[System.Serializable]
+public struct ParticleDictionaryEntry
+{
+    public ParticleTag Tag;
+    public GameObject ParticlePrefab;
+}
+
+[System.Serializable]
+public enum ParticleTag
+{
+    Tag1,
+    Tag2
 }
