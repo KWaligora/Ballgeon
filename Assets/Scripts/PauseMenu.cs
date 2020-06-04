@@ -40,4 +40,11 @@ public class PauseMenu : MonoBehaviour
         Enemys.ResetStaticVariables();
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1.0f;
+        Enemys.ResetStaticVariables();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
