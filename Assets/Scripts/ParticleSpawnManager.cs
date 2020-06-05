@@ -15,7 +15,7 @@ public class ParticleSpawnManager : MonoBehaviour
         Instance = this;
     }
 
-    public void SpawnParticle(ParticleTag tag, Vector3 position)
+    public void SpawnParticle(ParticleTag tag, Vector2 position)
     {
         ParticleDictionaryEntry[] entries = ParticleDictionary.Where(e => e.Tag == tag).ToArray();
         foreach(ParticleDictionaryEntry entry in entries) {
