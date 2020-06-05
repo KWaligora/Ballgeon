@@ -37,6 +37,19 @@ public struct ParticleDictionaryEntry
 [System.Serializable]
 public enum ParticleTag
 {
-    Tag1,
-    Tag2
+    gold,
+    curtain,
+    eye,
+    grave,
+    barrel,
+    bone,
+    spike,
+    bat,
+    shield,
+    dragonspike,
+    goblin,
+    ghost,
+    dragon,
+    wood,
+    wall
 }
