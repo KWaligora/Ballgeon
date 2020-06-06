@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Touchables : MonoBehaviour
 {
-    public float Brightness;
-
     private Material material;
     private bool tinted = false;
 
@@ -30,7 +28,7 @@ public class Touchables : MonoBehaviour
         else
         {
             tinted = true;
-            material.SetVector("_Vector4", new Vector4(Brightness, Brightness, Brightness, 1));
+            material.SetVector("_Vector4", new Vector4(2, 2, 2, 1));
         }
     }
 }
