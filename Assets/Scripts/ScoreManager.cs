@@ -14,6 +14,8 @@ public class ScoreManager : MonoBehaviour
     public deskBroken bossLockReference;
     bool bossRoomUnlocked;
     public int BossUnlockScore;
+    public GameObject DeathParticlePrefab;
+    public GameObject DeathParticleOrigin;
 
     public void Awake()
     {
@@ -38,6 +40,8 @@ public class ScoreManager : MonoBehaviour
     public void OnLifeDown()
     {
         AddLives(-1);
+        ParticleSpawnManager.Instance.SpawnParticleForPrefab(DeathParticlePrefab, DeathParticleOrigin.transform.position);
+
         if (IsDead())
         {
             HighscoreUI.gameObject.SetActive(true);
