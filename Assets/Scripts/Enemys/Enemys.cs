@@ -141,6 +141,7 @@ public class Enemys : MonoBehaviour
             enemysCounter++;
         }
     }
+
     #endregion
 
     //Set new value of currentLvl

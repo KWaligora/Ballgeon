@@ -39,11 +39,13 @@ public class ScoreManager : MonoBehaviour
 
     public void OnLifeDown()
     {
+        AudioManager.Instance.PlaySound(AudioKey.LossHP);
         AddLives(-1);
         ParticleSpawnManager.Instance.SpawnParticleForPrefab(DeathParticlePrefab, DeathParticleOrigin.transform.position);
 
         if (IsDead())
         {
+            AudioManager.Instance.PlaySound(AudioKey.GameOver);
             HighscoreUI.gameObject.SetActive(true);
             int PlayerScore = InGameUI.Score;
             if (HighscoreManager.Instance.IsHighscore(PlayerScore))

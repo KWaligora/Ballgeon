@@ -22,6 +22,8 @@ public class Bridge : MonoBehaviour
     {       
         Rigidbody2D ballRB = ball.GetComponent<Rigidbody2D>();
 
+        AudioManager.Instance.PlaySound(AudioKey.Bridge);
+
         //Vector2 velocity = ballRB.velocity;
         ballRB.velocity = new Vector2(0, 0);
         ballRB.gravityScale = 0;

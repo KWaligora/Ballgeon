@@ -35,6 +35,7 @@ public class deskBroken : MonoBehaviour
             ShakePosition();
             yield return new WaitForSeconds(SingleShakeLength);
         }
+        AudioManager.Instance.PlaySound(AudioKey.BossRoomPlank);
         SpawnParticles();
         Destroy(gameObject);
     }

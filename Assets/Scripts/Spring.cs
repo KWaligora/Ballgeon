@@ -18,6 +18,8 @@ public class Spring : MonoBehaviour
     Ball ballScript;
     BoxCollider2D selfCollision;
 
+    bool canPlayAudio = true;
+
     void Start()
     {
         parentObject = gameObject.transform.parent.gameObject;
@@ -30,6 +32,8 @@ public class Spring : MonoBehaviour
     {
         if (Input.GetButton("Spring"))
         {
+            if (canPlayAudio)
+                StringSound();
             timePressed += Time.deltaTime;
             if (timePressed > maxPressedTime)
                 timePressed = maxPressedTime;
@@ -38,6 +42,8 @@ public class Spring : MonoBehaviour
 
         if (Input.GetButtonUp("Spring"))
         {
+            canPlayAudio = true;
+            AudioManager.Instance.PlaySound(AudioKey.SpringRelese);
             float pushForce = Mathf.Lerp(minSpringForce,maxSpringForce,timePressed / maxPressedTime);
             AddForceToBall(pushForce);
             timePressed = 0;
@@ -46,7 +52,7 @@ public class Spring : MonoBehaviour
     }
 
     void LerpSpringScale()
-    {
+    {        
         float newScale = Mathf.Lerp(1, minSpringScale, timePressed / maxPressedTime);
         parentObject.transform.localScale = new Vector3(1, newScale, 1);
     }
@@ -80,4 +86,11 @@ public class Spring : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         selfCollision.enabled = true;
     }
+
+    void StringSound()
+    {
+        canPlayAudio = false;
+        AudioManager.Instance.PlaySound(AudioKey.SpringStretch);
+    }
+   
 }
