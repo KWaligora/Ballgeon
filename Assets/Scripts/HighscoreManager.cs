@@ -48,6 +48,7 @@ public class HighscoreManager : MonoBehaviour
     public void ResetHighscore()
     {
         highscoreSave = new HighscoreSave();
+        HighscoreSave.Save(highscoreSave);
     }
   
 
