@@ -187,7 +187,16 @@ public enum AudioKey
     Triangle,
     Spike,
     Barrel,
-    Attack
+    Goblin,
+    Ghost,
+    Bridge,
+    GameOver,
+    LossHP,
+    LvlUp,
+    BossRoomPlank,
+    SpringRelese,
+    SpringStretch,
+    Touchable
 }
 
 //Stores audio source and track data
