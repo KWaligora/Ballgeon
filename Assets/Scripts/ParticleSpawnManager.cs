@@ -15,15 +15,20 @@ public class ParticleSpawnManager : MonoBehaviour
         Instance = this;
     }
 
-    public void SpawnParticle(ParticleTag tag, Vector3 position)
+    public void SpawnParticle(ParticleTag tag, Vector2 position)
     {
         ParticleDictionaryEntry[] entries = ParticleDictionary.Where(e => e.Tag == tag).ToArray();
         foreach(ParticleDictionaryEntry entry in entries) {
-            GameObject particleParent = Instantiate(ParticleParentPrefab, position, Quaternion.identity);
-            ParticleSystem particleSystem = Instantiate(entry.ParticlePrefab, particleParent.transform).GetComponent<ParticleSystem>();
-            ParticleParent parentScript = particleParent.GetComponent<ParticleParent>();
-            parentScript.Initiate(particleSystem);
+            SpawnParticleForPrefab(entry.ParticlePrefab, position);
         }
+    }
+
+    public void SpawnParticleForPrefab(GameObject prefab, Vector2 position)
+    {
+        GameObject particleParent = Instantiate(ParticleParentPrefab, position, Quaternion.identity);
+        ParticleSystem particleSystem = Instantiate(prefab, particleParent.transform).GetComponent<ParticleSystem>();
+        ParticleParent parentScript = particleParent.GetComponent<ParticleParent>();
+        parentScript.Initiate(particleSystem);
     }
 }
 
@@ -37,6 +42,20 @@ public struct ParticleDictionaryEntry
 [System.Serializable]
 public enum ParticleTag
 {
-    Tag1,
-    Tag2
+    gold,
+    curtain,
+    eye,
+    grave,
+    barrel,
+    bone,
+    spike,
+    bat,
+    shield,
+    dragonspike,
+    goblin,
+    ghost,
+    dragon,
+    wood,
+    wall,
+    fire
 }

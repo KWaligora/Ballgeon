@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,6 +30,15 @@ public class Ball : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         ignoringMaxVelocity = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        ParticleTag tag;
+        if (Enum.TryParse(collision.gameObject.tag, out tag))
+        {
+            ParticleSpawnManager.Instance.SpawnParticle(tag, collision.GetContact(0).point);
+        }
     }
 
     private void FixedUpdate()

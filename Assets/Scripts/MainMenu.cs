@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private GameObject CurrentlyInRightSlot;
+    public GameObject HowToPlayUI;
     public GameObject HighscoreDisplayUI;
     public GameObject CreditsDisplayUI;
     public GameObject WipeSavePromptUI;
@@ -13,6 +14,11 @@ public class MainMenu : MonoBehaviour
     public void OnStart()
     {
         SceneManager.LoadScene("lvl1");
+    }
+
+    public void OnHowToPlay()
+    {
+        SwapActive(CurrentlyInRightSlot, HowToPlayUI);
     }
 
     public void OnHighscore()
@@ -35,9 +41,15 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    //Hides the previous and shows the next
+    //Hides the previous and shows the next or toggles if they are the same
     private void SwapActive(GameObject previous, GameObject next)
     {
+        if(previous == next && previous != null) // if they are the same - toggle active state
+        {
+            previous.SetActive(!previous.activeSelf);
+            return;
+        }
+
         if (previous != null)
             previous.SetActive(false);
         if(next != null)

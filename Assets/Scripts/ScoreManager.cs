@@ -11,6 +11,9 @@ public class ScoreManager : MonoBehaviour
     public GameOver GameOverUI;
     public HighscorePrompt HighscorePromptUI;
     public BallRespawn respawnReference;
+    public deskBroken bossLockReference;
+    bool bossRoomUnlocked;
+    public int BossUnlockScore;
 
     public void Awake()
     {
@@ -24,6 +27,7 @@ public class ScoreManager : MonoBehaviour
 
     public void Initialize()
     {
+        bossRoomUnlocked = false;
         InGameUI.Score = 0;
         InGameUI.Lives = 3;
         InGameUI.Level = 1;
@@ -53,6 +57,11 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int value)
     {
         InGameUI.Score += value * InGameUI.Level;
+        if(!bossRoomUnlocked && InGameUI.Score >= BossUnlockScore)
+        {
+            bossLockReference.BreakOpen();
+            bossRoomUnlocked = true;
+        }
     }
 
     public void AddLives(int value)
