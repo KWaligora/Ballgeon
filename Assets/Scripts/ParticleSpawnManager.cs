@@ -56,5 +56,6 @@ public enum ParticleTag
     ghost,
     dragon,
     wood,
-    wall
+    wall,
+    fire
 }
