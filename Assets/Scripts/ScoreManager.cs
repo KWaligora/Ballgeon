@@ -78,5 +78,6 @@ public class ScoreManager : MonoBehaviour
     public void SetLevel(int value)
     {
         InGameUI.Level = value;
+        AudioManager.Instance.PlaySound(AudioKey.LvlUp);
     }
 }
