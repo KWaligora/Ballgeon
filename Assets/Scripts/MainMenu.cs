@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class MainMenu : MonoBehaviour
     public GameObject HighscoreDisplayUI;
     public GameObject CreditsDisplayUI;
     public GameObject WipeSavePromptUI;
+    public Image MusicMuteImage;
+    public Image SoundMuteImage;
+
+    public void Start()
+    {
+        RefreshSoundIcons();
+    }
 
     public void OnStart()
     {
@@ -57,7 +65,24 @@ public class MainMenu : MonoBehaviour
             CurrentlyInRightSlot = next;
             next.SetActive(true);
         }
+    }
 
+    public void OnMusicButton()
+    {
+        SettingsManager.Instance.MusicOn = !SettingsManager.Instance.MusicOn;
+        RefreshSoundIcons();
+    }
+
+    public void OnSoundButton()
+    {
+        SettingsManager.Instance.SoundOn = !SettingsManager.Instance.SoundOn;
+        RefreshSoundIcons();
+    }
+
+    private void RefreshSoundIcons()
+    {
+        MusicMuteImage.gameObject.SetActive(!SettingsManager.Instance.MusicOn);
+        SoundMuteImage.gameObject.SetActive(!SettingsManager.Instance.SoundOn);
     }
 
 }
