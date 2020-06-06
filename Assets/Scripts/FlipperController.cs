@@ -18,6 +18,9 @@ public class FlipperController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("LeftFire") || Input.GetButtonDown("RightFire"))
+            AudioManager.Instance.PlaySound(AudioKey.Flipper);
+
         if((!isRight && Input.GetAxis("LeftFire") > 0) || (isRight && Input.GetAxis("RightFire") > 0))
             keyActive = true;
         else

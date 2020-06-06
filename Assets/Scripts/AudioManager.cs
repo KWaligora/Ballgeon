@@ -47,6 +47,8 @@ public class AudioManager : MonoBehaviour
         AudioSource source = gameObject.AddComponent<AudioSource>();
         source.volume = data.desiredVolume;
         source.clip = data.clip;
+        if (data.key == AudioKey.Touchable)
+            source.pitch = 0.5f;
         return source;
     }
 
@@ -196,7 +198,9 @@ public enum AudioKey
     BossRoomPlank,
     SpringRelese,
     SpringStretch,
-    Touchable
+    Touchable,
+    Flipper,
+    Invalid
 }
 
 //Stores audio source and track data
